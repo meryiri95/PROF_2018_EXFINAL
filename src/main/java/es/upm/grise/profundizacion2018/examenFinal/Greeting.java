@@ -4,16 +4,18 @@ import java.util.Calendar;
 
 public class Greeting {
 	
-	private Calendar calendar = Calendar.getInstance();
+	private Calendar calendar;
 	private int hour;
 	
 	Greeting() {
 		// Get current hour
+		calendar = Calendar.getInstance();
 		hour = calendar.get( Calendar.HOUR_OF_DAY );
 		
 	}
-	Greeting(int hourTest) {
-		calendar.set(Calendar.HOUR, hour);
+	Greeting(Calendar calendarTest, int hourTest) {
+		calendar = calendarTest;
+		//calendar.set(Calendar.HOUR, hour);
 		hour = hourTest;
 	}
 	

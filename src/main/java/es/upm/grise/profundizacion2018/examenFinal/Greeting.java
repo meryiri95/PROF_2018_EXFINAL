@@ -6,6 +6,7 @@ public class Greeting {
 	
 	private Calendar calendar;
 	private int hour;
+	private Message message=null;
 	
 	Greeting() {
 		// Get current hour
@@ -17,6 +18,12 @@ public class Greeting {
 		calendar = calendarTest;
 		//calendar.set(Calendar.HOUR, hour);
 		hour = hourTest;
+	}
+	Greeting(Calendar calendarTest, int hourTest,Message messageT) {
+		calendar = calendarTest;
+		//calendar.set(Calendar.HOUR, hour);
+		hour = hourTest;
+		message= messageT;
 	}
 	
 	
@@ -38,7 +45,7 @@ public class Greeting {
 			moment = TimeOfTheDay.EVENING;
 			
 		// Return the message		
-		return Message.getMessage( moment, language );
+			return message.getMessage(moment, language);
 	}
 
 }
